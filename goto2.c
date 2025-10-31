@@ -15,11 +15,11 @@ int main()
    int n;
    int stop = 0;
    
-   while( stop == 0 ) 
+   while (stop == 0) 
    {
       printf("Podaj liczbe z zakresu od 1 do 10\n");
       scanf("%d", &n);
-      if( n >= 1 && n<=10 ) stop=1;
+      if (n >= 1 && n <= 10) stop=1;
       else printf("Blad: niepoprawna wartosc\n");
    }
       

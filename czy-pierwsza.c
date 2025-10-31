@@ -16,13 +16,13 @@ int main()
    printf("n = "); 
    scanf("%d", &n);
    
-   while ( i < n )
+   while (i < n)
    {
-      if ( n % i == 0 ) break;
+      if (n % i == 0) break;
       i = i + 1;
    }
 
-   if(i == n || n == 1) 
+   if (i == n || n == 1) 
       printf("Liczba %d jest liczba pierwsza\n", n);
    else 
       printf("Liczba %d nie jest liczba pierwsza\n", n);

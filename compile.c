@@ -2,7 +2,6 @@
 #define TRUE 1
 #define REAL float
 
-
 int main()
 {
    REAL liczba;
@@ -10,6 +9,6 @@ int main()
    if(TRUE)
    {
    }
-   return 0;
 
+   return 0;
 }

@@ -18,19 +18,19 @@ int main()
 
    scanf("%f %c%f",&x, &op, &y);
 
-   switch(op)
+   switch (op)
    {
       case '+' :
-         printf("%f\n", x+y);
+         printf("%f\n", x + y);
          break;
       case '-' :
-         printf("%f\n", x-y);
+         printf("%f\n", x - y);
          break;
       case '*' :
-         printf("%f\n", x*y);
+         printf("%f\n", x * y);
          break;
       case '/' :
-         printf("%f\n", x/y);
+         printf("%f\n", x / y);
          break;
       default:
          printf("Nieznana operacja: %c\n", op);
