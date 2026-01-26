@@ -14,7 +14,7 @@ int fibonacci(int n)
 {
    int f=1, fp=1, k;
 
-   while( n>1 )
+   while (n > 1)
    {
       k = f + fp;
       fp = f;
@@ -32,7 +32,7 @@ int main()
    scanf("%d", &n);
 
    for(i=0; i<=n; i++) 
-      printf("%d %d\n",i, fibonacci(i));
+      printf("%d %d\n", i, fibonacci(i));
 
    return 0;
 }

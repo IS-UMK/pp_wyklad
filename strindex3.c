@@ -12,20 +12,20 @@
 
 
 /*  Zwraca pozycje tekstu 'w' w tekscie 't' lub -1 gdy nie znaleziono. */
-int strindex(char *t, char *w)
+int strindex(const char *t, const char *w)
 {
    char *pt, *pw, *pt2;
    
-   for(pt=t; *pt != '\0'; pt++)
+   for (pt=t; *pt != '\0'; pt++)
    {
-      pw=w;
-      pt2=pt;
-      while(*pt2 == *pw && *pw != '\0') 
+      pw = w;
+      pt2 = pt;
+      while (*pt2 == *pw && *pw != '\0') 
       {
          pw++;
-	 pt2++;
+         pt2++;
       }
-      if(*pw == '\0') return pt-t;
+      if (*pw == '\0') return pt - t;
    }
    return -1;
 }
@@ -51,12 +51,10 @@ int main()
    do
    {
       i = strindex(tekst + j, wzor);
-
-      if( i >= 0 ) printf("%d %s\n", j + i, tekst + j + i);
-
+      if (i >= 0) printf("%d %s\n", j + i, tekst + j + i);
       j = j + i + 1;
-
-   }while( i >= 0 );
+      
+   } while (i >= 0);
 
    return 0;
 }

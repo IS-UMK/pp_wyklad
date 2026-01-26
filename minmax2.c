@@ -30,46 +30,46 @@ void minmax(const float t[], int n, float *min, float *max)
    int i;
    float tmin, tmax;
    
-   if( n==1 ){
-      *min=t[0];
-      *max=t[0];
+   if (n == 1) {
+      *min = t[0];
+      *max = t[0];
       return;
    }
    
-   if( t[0]<t[1] ){ 
-      *min=t[0];  
-      *max=t[1]; 
+   if (t[0] < t[1]) { 
+      *min = t[0];  
+      *max = t[1]; 
    }
-   else{ 
-      *min=t[1];  
-      *max=t[0]; 
+   else { 
+      *min = t[1];  
+      *max = t[0]; 
    }
    
-   for( i=2; i < n-1; i=i+2 ){
-      if( t[i]<t[i+1] ) { 
+   for (i=2; i < n-1; i=i+2){
+      if (t[i] < t[i+1]) { 
          tmin=t[i];   
          tmax=t[i+1]; 
       }
-      else  { 
+      else { 
          tmin=t[i+1]; 
          tmax=t[i];   
       }
-      if( *max<tmax ) *max=tmax;
-      if( *min>tmin ) *min=tmin;
+      if (*max < tmax) *max = tmax;
+      if (*min > tmin) *min = tmin;
    }
-   if( i == n-1 ){
-      if( *max<t[i] ) *max=t[i];
-      if( *min>t[i] ) *min=t[i];
+   if (i == n-1) {
+      if (*max < t[i]) *max = t[i];
+      if (*min > t[i]) *min = t[i];
    }
 }
 
 void wczytaj(float t[], int n)
 {
-   int i=0;
-   while(i<n)
+   int i = 0;
+   while (i < n)
    {
-      printf("t[%d] = ",i);
-      scanf("%f",&t[i]);
+      printf("t[%d] = ", i);
+      scanf("%f", &t[i]);
       i = i + 1;
    }
 }

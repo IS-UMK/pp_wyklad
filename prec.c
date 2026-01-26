@@ -21,7 +21,7 @@ int main()
 {
    float x = 0.1;
 
-   if(x  == 0.1 ) printf ("OK, %f jest rowne 0.1\n", x);
+   if (x  == 0.1) printf ("OK, %f jest rowne 0.1\n", x);
    else printf("Nie OK, %f nie jest rowne 0.1\n", x);
 
    return 0;

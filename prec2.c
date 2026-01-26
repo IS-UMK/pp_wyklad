@@ -23,8 +23,8 @@ int main()
 {
    float x = 0.1;
    
-   if( fabs(x-0.1) < EPS ) 
-      printf ("OK, %f jest rowne 0.1\n", x);
+   if (fabs(x-0.1) < EPS) 
+      printf("OK, %f jest rowne 0.1\n", x);
    else 
       printf("Nie OK, %f nie jest rowne 0.1\n", x);
 

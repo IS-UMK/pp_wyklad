@@ -24,10 +24,10 @@ int main()
    int  *pa = &a;
    char *pb = &b;
    
-   printf("pa   = %p %lu\n", pa   , pa  );
-   printf("pa+1 = %p %lu\n", pa+1 , pa+1);
-   printf("pb   = %p %lu\n", pb   , pb  );
-   printf("pb+1 = %p %lu\n", pb+1 , pb+1);
+   printf("pa   = %p %lu\n", pa    , pa    );
+   printf("pa+1 = %p %lu\n", pa + 1, pa + 1);
+   printf("pb   = %p %lu\n", pb    , pb    );
+   printf("pb+1 = %p %lu\n", pb + 1, pb + 1);
    
    return 0;
 }

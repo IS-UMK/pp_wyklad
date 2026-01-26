@@ -24,18 +24,18 @@ void f(void)
    int lokalna = 0;
    globalna = globalna + 1;  
    lokalna = lokalna + 1;
-   printf("%d\t %d\t f\n", globalna, lokalna);
+   printf("%d         %d      f\n", globalna, lokalna);
 }
 
 int main()
 {
-   int lokalna = 13;
+   int lokalna = 42;
    
    printf("globalna lokalna funkcja\n");
-   printf("%d\t %d\t main\n", globalna, lokalna);
+   printf("%d        %d      main\n", globalna, lokalna);
    f();
-   printf("%d\t %d\t main\n", globalna, lokalna);
+   printf("%d        %d      main\n", globalna, lokalna);
    f();
-   printf("%d\t %d\t main\n", globalna, lokalna);
+   printf("%d        %d      main\n", globalna, lokalna);
    return 0;
 }

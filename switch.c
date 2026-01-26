@@ -16,7 +16,7 @@ int main()
    float x, y;
    char op;
 
-   scanf("%f %c%f",&x, &op, &y);
+   scanf("%f %c%f", &x, &op, &y);
 
    switch (op)
    {
@@ -28,10 +28,10 @@ int main()
          break;
       case '*' :
          printf("%f\n", x * y);
-         break;
+ //        break;
       case '/' :
          printf("%f\n", x / y);
-         break;
+//         break;
       default:
          printf("Nieznana operacja: %c\n", op);
    }

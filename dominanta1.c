@@ -31,16 +31,16 @@ int dominanta(const int *t, int n, int *c)
   
    *c = 0;
    i = 0;
-   while( i < n )
+   while (i < n)
    {
       k = 0;
       j = 0;
-      while( j<n )
+      while (j < n)
       {
-         if ( t[i] == t[j] ) k = k + 1;
+         if (t[i] == t[j]) k = k + 1;
          j = j + 1;   
       }
-      if( k > *c ) 
+      if (k > *c) 
       {
          *c = k;
          x = t[i];
@@ -54,10 +54,10 @@ int *wczytaj(int *t, int n)
 {
    int i=0;
 
-   printf("Podaj %d liczb calkowitych\n",n);
-   while(i<n)
+   printf("Podaj %d liczb calkowitych\n", n);
+   while (i < n)
    {
-      scanf("%d",t+i);
+      scanf("%d", t+i);
       i = i + 1;
    }
    return t;
@@ -69,15 +69,15 @@ int main()
    int t[MAX];
 
    printf("Ile liczb (nie wiecej niz %d) ? ", MAX); 
-   scanf("%d",&n);
+   scanf("%d", &n);
 
-   if(n<1 || n>MAX) 
+   if(n < 1 || n > MAX) 
    {
       printf("Niepoprawna wartosc\n");
       exit(1);
    }
    
-   wczytaj(t,n); 
+   wczytaj(t, n); 
    x = dominanta(t, n, &i);
    printf("Liczba %d wsytepuje %d razy\n", x, i);
    

@@ -24,9 +24,9 @@
  *  zwracana jest wartosc -1. */
 float heron(float a, float b, float c)
 {
-   float p = (a+b+c)/2;
-   p = p*(p-a)*(p-b)*(p-c);
-   if(p<0) return -1;
+   float p = (a + b + c) / 2;
+   p = p * (p - a) * (p - b) * (p - c);
+   if (p < 0) return -1;
    return sqrt(p); 
 }
 
@@ -37,14 +37,14 @@ int main()
    printf("Podaj dlugosci bokow trojkata: a, b, c > 0\n");
    scanf("%f%f%f", &a, &b, &c);
 
-   if ( a <= 0 || b <= 0 || c<=0 ) 
+   if (a <= 0 || b <= 0 || c <= 0) 
    {
        printf("Zle dane: wartosci musza byc dodatnie.\n");
        return 1;
    }
    
    pole = heron(a, b, c);
-   if( pole < 0 ) 
+   if (pole < 0) 
    {
       printf("Zle dane: to nie sa boki trojkata\n"); 
       return 2;

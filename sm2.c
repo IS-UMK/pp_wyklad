@@ -37,13 +37,13 @@ struct punkt wczytaj()
 {
    struct punkt p;
    printf("Podaj wsp. x,y,z i mase punktu : ");
-   scanf("%f %f %f %f",&p.x,&p.y,&p.z,&p.m);
+   scanf("%f %f %f %f", &p.x, &p.y, &p.z, &p.m);
    return p;
 }
 
 void wypisz(struct punkt p)
 {
-   printf("x=%f\ny=%f\nz=%f\nm=%f\n",p.x,p.y,p.z,p.m);
+   printf("x=%f\ny=%f\nz=%f\nm=%f\n", p.x, p.y, p.z, p.m);
 }
 
 

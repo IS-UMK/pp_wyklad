@@ -12,7 +12,7 @@
 
 int main()
 {
-   int a = 1;
+   int a = 42;
    int b;
 
    b = ++a;

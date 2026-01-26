@@ -12,38 +12,38 @@
 
 
 /*  Zwraca pozycje tekstu 'w' w tekscie 't' lub -1 gdy nie znaleziono. */
-int strindex(char t[], char w[])
+int strindex(const char t[], const char w[])
 {
    int i, k;
    
    i=0;
-   while(t[i] != '\0')
+   while (t[i] != '\0')
    {
       k=0;
-      while(t[i+k]==w[k] && w[k] != '\0') 
+      while (t[i+k] == w[k] && w[k] != '\0') 
          k = k + 1;
-      if(w[k]=='\0') return i;
+      if (w[k] == '\0') return i;
       i = i + 1;
    }
    return -1;
 }
 
 /* Funkcja tworzy tablice przesuniec dla algorytmu Boyera-Moore'a */
-void utworz_tp(int tp[], char w[])
+void utworz_tp(int tp[], char const w[])
 {
-   int i=0;
+   int i = 0;
 
-   while(i<128)
+   while (i < 128)
    {
-      tp[i]=-1;
-      i=i+1;
+      tp[i] = -1;
+      i = i + 1;
    }
 
-   i=0;
-   while(w[i] != '\0') 
+   i = 0;
+   while (w[i] != '\0') 
    {
-      tp[w[i]]=i;
-      i=i+1;
+      tp[w[i]] = i;
+      i = i + 1;
    }
 }
 
@@ -59,13 +59,13 @@ int strindex2(char t[], char w[])
    wl=strlen(w);
    
    i=0;
-   while(i <= tl-wl)
+   while (i <= tl - wl)
    {
-      k=wl-1;
-      while(k>=0 && t[i+k]==w[k] ) k=k-1; 
-      if(k==-1) return i;
-      z=k-tp[t[i+k]];
-      if(z<1) z=1;
+      k = wl - 1;
+      while (k >= 0 && t[i+k] == w[k] ) k = k - 1; 
+      if (k == -1) return i;
+      z = k - tp[t[i+k]];
+      if (z < 1) z = 1;
       i = i + z;
    }
    return -1;

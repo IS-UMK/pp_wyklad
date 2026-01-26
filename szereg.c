@@ -24,12 +24,12 @@ int main()
    
    printf("n="); scanf("%d", &n);
    
-   for(i=1; i<=n; i++) 
-      x = x + 1.0/i;
+   for (i=1; i <= n; i++) 
+      x = x + 1.0 / i;
 
-   for(i=n; i>=1; i--) 
-      y = y + 1.0/i;
+   for (i=n; i >= 1; i--) 
+      y = y + 1.0 / i;
    
-   printf("x=%f\ny=%f\n",x,y);
+   printf("x=%f\ny=%f\n", x, y);
    return 0;
 }

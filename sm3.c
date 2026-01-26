@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  sm2_tab.c
+ *       Filename:  sm3.c
  *
  *    Description:  Srodek masy. Punkt materialny reprezentowany struktura z tablica.
  *
@@ -26,11 +26,11 @@ struct punkt
 struct punkt srodek(struct punkt p1, struct punkt p2)
 {
     struct punkt sm;
-    int i=0;
-    sm.m=p1.m+p2.m;
-    while(i<3) 
+    int i = 0;
+    sm.m = p1.m + p2.m;
+    while(i < 3) 
     {
-         sm.wsp[i]=(p1.m*p1.wsp[i]+p2.m*p2.wsp[i])/sm.m;
+         sm.wsp[i] = (p1.m * p1.wsp[i] + p2.m * p2.wsp[i]) / sm.m;
          i = i + 1;
     }
     return sm;
@@ -40,13 +40,13 @@ struct punkt wczytaj()
 {
    struct punkt p;
    printf("Podaj wsp. x,y,z i mase: ");
-   scanf("%f %f %f %f",&p.wsp[0],&p.wsp[1],&p.wsp[2],&p.m);
+   scanf("%f %f %f %f", &p.wsp[0], &p.wsp[1], &p.wsp[2], &p.m);
    return p;
 }
 
 void wypisz(struct punkt p)
 {
-   printf("x=%f y=%f z=%f m=%f\n",p.wsp[0],p.wsp[1],p.wsp[2],p.m);
+   printf("x=%f y=%f z=%f m=%f\n", p.wsp[0], p.wsp[1], p.wsp[2], p.m);
 }
 
 
@@ -60,7 +60,7 @@ int main()
 
     do
     {
-      printf("Punkt %d\n",i);
+      printf("Punkt %d\n", i);
       p1 = wczytaj();
       p = srodek(p1, p);
       printf("Aktualny srodek masy:\n");
@@ -68,7 +68,7 @@ int main()
       printf("Czy dodac kolejny punkt [t/n] ? ");
       scanf(" %c", &dalej);
       i = i + 1;
-    }while(dalej != 'n' );
+    } while (dalej != 'n');
 
    printf("Srodek masy:\n");
    wypisz(p);

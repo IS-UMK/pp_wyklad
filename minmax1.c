@@ -27,30 +27,30 @@
 void minmax(const float t[], int n, float *min, float *max)
 {
    int i = 1;
-   *min=t[0];
-   *max=t[0];
+   *min = t[0];
+   *max = t[0];
    
-   while( i < n)
+   while (i < n)
    {
-      if( *min > t[i] ) *min = t[i];
-      if( *max < t[i] ) *max = t[i];
+      if (*min > t[i]) *min = t[i];
+      if (*max < t[i]) *max = t[i];
       i = i + 1;
    }
 }
 
 int wczytaj(float t[], int max)
 {
-   int i=0, n;
+   int i = 0, n;
    
    printf("Ile liczb (max. %d) : ", max);
    scanf("%d", &n);
    
-   if ( n > max ) n=max;
+   if (n > max) n = max;
 
-   while(i<n)
+   while (i < n)
    {
-      printf("t[%d] = ", i );
-      scanf("%f", &t[i] );
+      printf("t[%d] = ", i);
+      scanf("%f", &t[i]);
       i = i + 1;
    }
    return i;

@@ -14,7 +14,7 @@ int main()
    char *s1 = "nieciekawy fragment tekstu.";
    char s2[] = "Ala ma kota";
    
-/*   s1[0]='N'; */
+   s1[0]='N'; 
    s2[0]='E';
    
    printf(s1);

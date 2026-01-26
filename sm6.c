@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  sm2_tab.c
+ *       Filename:  sm6.c
  *
  *    Description:  Srodek masy zbioru punktow. 
  *                  Chmura punktow reprezentowana struktura z tablica punktow materialnych.
@@ -17,7 +17,7 @@
  * =====================================================================================
  */
 #include <stdio.h>
-#define MAX 1000
+#define N 1000
 
 struct punkt
 {
@@ -30,20 +30,20 @@ struct punkt
 struct chmura 
 {
    int n ;
-   struct punkt p[MAX];
+   struct punkt p[N];
 };
 
 void wypisz_punkt(struct punkt p)
 {
-   printf("x=%f y=%f z=%f m=%f\n",p.x,p.y,p.z,p.m);
+   printf("x=%f y=%f z=%f m=%f\n", p.x, p.y, p.z, p.m);
 }
 
 void wypisz_chmure(struct chmura c)
 {
-    int i=0;
+    int i = 0;
     while(i < c.n)
     {
-       printf("%d: ",i);
+       printf("%d: ", i);
        wypisz_punkt(c.p[i]);
        i = i + 1;
     }
@@ -52,10 +52,10 @@ void wypisz_chmure(struct chmura c)
 struct punkt srodek(struct chmura c)
 {
     struct punkt sm;
-    int i=0;
+    int i = 0;
     
     sm.m = 0.0; sm.x = 0.0; sm.y = 0.0; sm.z = 0.0;
-    while(i<c.n) 
+    while(i < c.n) 
     {
          sm.m = sm.m + c.p[i].m; 
          sm.x = sm.x + c.p[i].x * c.p[i].m;
@@ -63,9 +63,9 @@ struct punkt srodek(struct chmura c)
          sm.z = sm.z + c.p[i].z * c.p[i].m;
          i = i + 1;
     }
-    sm.x = sm.x/sm.m;
-    sm.y = sm.y/sm.m;
-    sm.z = sm.z/sm.m;
+    sm.x = sm.x / sm.m;
+    sm.y = sm.y / sm.m;
+    sm.z = sm.z / sm.m;
     return sm;
 }
 
@@ -73,7 +73,7 @@ struct punkt wczytaj()
 {
    struct punkt p;
    printf("Podaj wsp. x,y,z i mase: ");
-   scanf("%f %f %f %f",&p.x,&p.y,&p.z,&p.m);
+   scanf("%f %f %f %f", &p.x, &p.y, &p.z, &p.m);
    return p;
 }
 
@@ -81,7 +81,7 @@ struct chmura dodaj(struct chmura c, struct punkt p)
 {
    struct chmura c1 = c;
    
-   if(c1.n < MAX) 
+   if(c1.n < N) 
    {
       c1.p[c1.n] = p;
       c1.n = c1.n + 1;
@@ -93,15 +93,15 @@ char czy_dalej()
 {
    char dalej;
    printf("Czy dodac kolejny punkt [t/n] ? ");
-   scanf(" %c",&dalej);
-   if ( dalej=='t' || dalej == 'T' ) return 1;
+   scanf(" %c", &dalej);
+   if (dalej == 't' || dalej == 'T') return 1;
    else return 0;
 }
 
 int main()
 {
    struct chmura c;
-   int i=0;
+   int i = 0;
 
    c.n = 0;
 
@@ -109,7 +109,7 @@ int main()
    {
       c = dodaj(c, wczytaj());
       i = i + 1;
-   }while( czy_dalej() && i < MAX );
+   } while (czy_dalej() && i < N);
 
    printf("Aktualny zbior punktow:\n");
    wypisz_chmure(c);

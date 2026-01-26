@@ -19,14 +19,14 @@
 #include <stdio.h>
 
 /* Funkcja wyswietla w odwrotnej kolejnosci 'n' liczb dziesietnych z tablicy 't */
-void wypisz(int *t,int n)
+void wypisz(int *t, int n)
 {
-   while( n > 0 )
+   while (n > 0)
    {
       n = n - 1;
-      if( t[n] < 10 ) printf("%d",t[n]);
-      else if ( t[n] < 10 + 'Z' - 'A' ) printf("%c",t[n] - 10 + 'A');
-      else printf("[%d]",t[n]);
+      if (t[n] < 10) printf("%d", t[n]);
+      else if (t[n] < 10 + 'Z' - 'A') printf("%c", t[n] - 10 + 'A');
+      else printf("[%d]", t[n]);
    }
 }
 
@@ -37,9 +37,9 @@ void wypisz(int *t,int n)
  *  Funkcja zwraca ilosc cyfr umieszczonych w tablicy. */
 int zmien_podstawe(int x, int *t, int p)
 {
-   int i=0;
+   int i = 0;
    
-   while( x != 0 )
+   while (x != 0)
    {
       t[i] = x % p;
       x = x / p;
@@ -54,14 +54,14 @@ int main()
    int t[32], x, n, i;
 
    printf("Liczba dziesietna: ");
-   scanf("%d",&x);
+   scanf("%d", &x);
  
-   i=2;
-   while( i<=16 )
+   i = 2;
+   while (i <= 16)
    {
-      n=zmien_podstawe(x,t,i);
-      printf("%d: ",i);
-      wypisz(t,n);
+      n = zmien_podstawe(x, t, i);
+      printf("%d: ", i);
+      wypisz(t, n);
       printf("\n");
       i = i + 1;
    } 
