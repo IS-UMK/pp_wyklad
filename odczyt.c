@@ -14,19 +14,19 @@ int main()
    FILE *plik = NULL;
    int znak;
  
-   plik = fopen( "plik.txt", "r" );
-   if( plik == NULL )
+   plik = fopen( "plik.txt", "r");
+   if (plik == NULL)
    {
       perror("Wystapil blad");
       return 1;
    }
 
-   while( feof(plik) == 0 )
+   while (feof(plik) == 0)
    {
       znak = fgetc(plik);
       if (znak != EOF) printf("%c\n", znak);
    }
-   fclose( plik );
+   fclose(plik);
    
    return 0;
 }

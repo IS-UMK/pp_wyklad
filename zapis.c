@@ -7,24 +7,24 @@
  *
  * =====================================================================================
  */
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
    FILE *plik = NULL;
    float pi = 3.1415;
  
-   plik = fopen( "plik.txt", "w" );
-   if(plik != NULL )    
+   plik = fopen("plik.txt", "w");
+   if (plik != NULL)    
    {
       /* Tutaj operacje na pliku */
-      fprintf(plik,"Witaj swiecie!\nPI=%f\n", pi);
-      fclose( plik );
+      fprintf(plik, "Witaj swiecie!\nPI=%f\n", pi);
+      fclose(plik);
    }
    else
    {
       /* Obsluga bledu otwarcia pliku */   
-      printf("Blad otwarcia pliku %s\n", "plik.txt" );
+      printf("Blad otwarcia pliku %s\n", "plik.txt");
    }
    return 0;
 }
